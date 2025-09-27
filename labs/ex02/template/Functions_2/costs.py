@@ -21,4 +21,4 @@ def compute_loss(y, tx, w):
     # ***************************************************
     N = len(y)
     e = y - tx @ w
-    return (0.5/N) * ( (e.T)@e )
+    return float((0.5/N) * ( (e.T)@e ))
