@@ -49,11 +49,11 @@ def visualization(y, x, mean_x, std_x, w, save_name, is_LR=False):
     else:
         prediction = x_temp.dot(w) > 0.5
     prediction = prediction.reshape((weight.shape[0], height.shape[0]))
+    
     cs = ax2.contourf(hx, hy, prediction, 1)
-    proxy = [
-        plt.Rectangle((0, 0), 1, 1, fc=pc.get_facecolor()[0]) for pc in cs.collections
-    ]
-    ax2.legend(proxy, ["prediction male", "prediction female"])
+    #proxy = [ plt.Rectangle((0, 0), 1, 1, fc=pc.get_facecolor()[0]) for pc in cs.collections]
+    
+    #ax2.legend(proxy, ["prediction male", "prediction female"])
 
     ax2.scatter(x[females, 0], x[females, 1], marker="*", color=[0.06, 0.06, 1], s=20)
     ax2.scatter(x[males, 0], x[males, 1], marker=".", color=[1, 0.06, 0.06], s=20)
